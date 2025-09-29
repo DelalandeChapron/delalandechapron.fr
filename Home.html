@@ -191,135 +191,134 @@
             --grid-button-secondary-transition-timing-function: ease-in-out;
             --43a41e2e: 48px;
         }
+        
+        :root {
+            --color-meteorite-dark: #2f1c6a;
+            --color-meteorite-dark-2: #1F1346;
+            --color-meteorite: #8c85ff;
+            --color-meteorite-light: #d5dfff;
+            --color-primary-dark: #5025d1;
+            --color-primary: #673de6;
+            --color-primary-light: #ebe4ff;
+            --color-primary-charts: #B39EF3;
+            --color-danger-dark: #d63163;
+            --color-danger: #fc5185;
+            --color-danger-light: #ffe8ef;
+            --color-danger-charts: #FEA8C2;
+            --color-warning-dark: #fea419;
+            --color-warning-dark-2: #9F6000;
+            --color-warning-charts: #FFD28C;
+            --color-warning: #ffcd35;
+            --color-warning-light: #fff8e2;
+            --color-success-dark: #008361;
+            --color-success: #00b090;
+            --color-success-light: #def4f0;
+            --color-dark: #1d1e20;
+            --color-gray-dark: #36344d;
+            --color-gray: #727586;
+            --color-gray-border: #dadce0;
+            --color-gray-light: #f2f3f6;
+            --color-light: #fff;
+            --color-azure: #357df9;
+            --color-azure-light: #e3ebf9;
+            --color-azure-dark: #265ab2;
+            --color-indigo: #6366F1;
+            --color-neutral-200: #D8DAE0
+        }
+
+        .whats-app-bubble {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            z-index: 1000;
+            display: flex;
+            cursor: pointer;
+            border-radius: 100px;
+            box-shadow: #00000026 0 4px 12px
+        }
+
+        #wtpQualitySign_fixedCSS,
+        #wtpQualitySign_popupCSS {
+            bottom: 10px !important
+        }
+
+        #wtpQualitySign_fixedCSS {
+            z-index: 17 !important
+        }
+
+        #wtpQualitySign_popupCSS {
+            z-index: 18 !important
+        }
+        
+        /* Correction des polices pour correspondre au design original */
+        body, p, div, span, a, li, td, th, input, textarea, button, label {
+            font-family: 'Raleway', sans-serif !important;
+        }
+
+        /* Tous les titres doivent utiliser Rozha One */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Classes et éléments spécifiques */
+        .title, .heading, [class*="title"], [class*="heading"] {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Titre principal spécifique */
+        [class*="Clémentine"], [class*="Delalande"], [class*="Chapron"] {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* S'assurer que tous les éléments de texte dans les titres utilisent Rozha One */
+        h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Cibler spécifiquement les éléments de texte dans les grilles */
+        .text-box h1, .text-box h2, .text-box h3, .text-box h4, .text-box h5, .text-box h6 {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Cibler les éléments de layout */
+        .layout-element h1, .layout-element h2, .layout-element h3, .layout-element h4, .layout-element h5, .layout-element h6 {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Forcer Rozha One sur tous les spans dans les titres */
+        h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Mots mis en évidence dans les paragraphes */
+        strong, b, .font-bold, [class*="bold"] {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Éléments en gras dans les paragraphes */
+        p strong, p b, p .font-bold, p [class*="bold"] {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Spans dans les paragraphes avec style font-family: Rozha One */
+        p span[style*="font-family: Rozha One"],
+        p span[style*="font-family: 'Rozha One'"],
+        p span[style*="font-family: Rozha\\ One"] {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Spans dans les paragraphes avec police Rozha One spécifiée */
+        p span[style*="font-family: Rozha One"],
+        p span[style*="font-family: 'Rozha One'"],
+        p span[style*="font-family: Rozha\\ One"] {
+            font-family: 'Rozha One', serif !important;
+        }
+
+        /* Annuler Rozha One pour les spans qui n'ont pas cette police dans leur style */
+        p span:not([style*="font-family: Rozha One"]):not([style*="font-family: 'Rozha One'"]):not([style*="font-family: Rozha\\ One"]) {
+            font-family: inherit !important;
+        }
     </style>
-<style>
-    :root {
-        --color-meteorite-dark: #2f1c6a;
-        --color-meteorite-dark-2: #1F1346;
-        --color-meteorite: #8c85ff;
-        --color-meteorite-light: #d5dfff;
-        --color-primary-dark: #5025d1;
-        --color-primary: #673de6;
-        --color-primary-light: #ebe4ff;
-        --color-primary-charts: #B39EF3;
-        --color-danger-dark: #d63163;
-        --color-danger: #fc5185;
-        --color-danger-light: #ffe8ef;
-        --color-danger-charts: #FEA8C2;
-        --color-warning-dark: #fea419;
-        --color-warning-dark-2: #9F6000;
-        --color-warning-charts: #FFD28C;
-        --color-warning: #ffcd35;
-        --color-warning-light: #fff8e2;
-        --color-success-dark: #008361;
-        --color-success: #00b090;
-        --color-success-light: #def4f0;
-        --color-dark: #1d1e20;
-        --color-gray-dark: #36344d;
-        --color-gray: #727586;
-        --color-gray-border: #dadce0;
-        --color-gray-light: #f2f3f6;
-        --color-light: #fff;
-        --color-azure: #357df9;
-        --color-azure-light: #e3ebf9;
-        --color-azure-dark: #265ab2;
-        --color-indigo: #6366F1;
-        --color-neutral-200: #D8DAE0
-    }
-
-    .whats-app-bubble {
-        position: fixed;
-        right: 20px;
-        bottom: 24px;
-        z-index: 1000;
-        display: flex;
-        cursor: pointer;
-        border-radius: 100px;
-        box-shadow: #00000026 0 4px 12px
-    }
-
-    #wtpQualitySign_fixedCSS,
-    #wtpQualitySign_popupCSS {
-        bottom: 10px !important
-    }
-
-    #wtpQualitySign_fixedCSS {
-        z-index: 17 !important
-    }
-
-    #wtpQualitySign_popupCSS {
-        z-index: 18 !important
-    }
-</style><style>
-/* Correction des polices pour correspondre au design original */
-body, p, div, span, a, li, td, th, input, textarea, button, label {
-    font-family: 'Raleway', sans-serif !important;
-}
-
-/* Tous les titres doivent utiliser Rozha One */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Classes et éléments spécifiques */
-.title, .heading, [class*="title"], [class*="heading"] {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Titre principal spécifique */
-[class*="Clémentine"], [class*="Delalande"], [class*="Chapron"] {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* S'assurer que tous les éléments de texte dans les titres utilisent Rozha One */
-h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Cibler spécifiquement les éléments de texte dans les grilles */
-.text-box h1, .text-box h2, .text-box h3, .text-box h4, .text-box h5, .text-box h6 {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Cibler les éléments de layout */
-.layout-element h1, .layout-element h2, .layout-element h3, .layout-element h4, .layout-element h5, .layout-element h6 {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Forcer Rozha One sur tous les spans dans les titres */
-h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Mots mis en évidence dans les paragraphes */
-strong, b, .font-bold, [class*="bold"] {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Éléments en gras dans les paragraphes */
-p strong, p b, p .font-bold, p [class*="bold"] {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Spans dans les paragraphes avec style font-family: Rozha One */
-p span[style*="font-family: Rozha One"],
-p span[style*="font-family: 'Rozha One'"],
-p span[style*="font-family: Rozha\\ One"] {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Spans dans les paragraphes avec police Rozha One spécifiée */
-p span[style*="font-family: Rozha One"],
-p span[style*="font-family: 'Rozha One'"],
-p span[style*="font-family: Rozha\\ One"] {
-    font-family: 'Rozha One', serif !important;
-}
-
-/* Annuler Rozha One pour les spans qui n'ont pas cette police dans leur style */
-p span:not([style*="font-family: Rozha One"]):not([style*="font-family: 'Rozha One'"]):not([style*="font-family: Rozha\\ One"]) {
-    font-family: inherit !important;
-}
-</style>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org/",
