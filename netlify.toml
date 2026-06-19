@@ -1,0 +1,59 @@
+# Déploiement Netlify de delalandechapron.fr
+# Site statique sans étape de build : on publie la racine du repo telle quelle.
+
+[build]
+  publish = "."
+  # Pas de build : pas de commande. (laissé vide volontairement)
+  command = ""
+
+# ---------------------------------------------------------------------------
+# En-têtes de cache — repris à l'identique de l'ancien .htaccess Apache
+# ---------------------------------------------------------------------------
+
+# Images : 1 an, immuable (noms de fichiers stables)
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Polices auto-hébergées : 1 an, immuable
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS : 1 mois (fichier non versionné → on évite l'immuable pour voir les MAJ)
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Favicons : 1 an
+[[headers]]
+  for = "/favicons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML : 1 heure (revalidation rapide pour que les mises à jour sortent vite)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Racine (servie comme index.html) : même politique que le HTML
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# ---------------------------------------------------------------------------
+# En-têtes de sécurité — sûrs, n'altèrent pas le rendu
+# (pas de CSP ici : le site a des styles/scripts inline qu'une CSP stricte
+#  casserait ; à traiter séparément si besoin)
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
