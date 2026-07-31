@@ -52,9 +52,14 @@
     Cache-Control = "public, max-age=3600"
 
 # ---------------------------------------------------------------------------
-# En-têtes de sécurité — sûrs, n'altèrent pas le rendu
-# (pas de CSP ici : le site a des styles/scripts inline qu'une CSP stricte
-#  casserait ; à traiter séparément si besoin)
+# En-têtes de sécurité
+#
+# La CSP est désormais possible : depuis la réécriture, la page ne charge plus
+# aucune ressource externe (polices auto-hébergées, images locales, zéro script
+# tiers). Seul 'unsafe-inline' pour les styles reste nécessaire, le CSS étant
+# embarqué dans la page. Le JSON-LD n'a pas besoin d'être autorisé : son type
+# n'étant pas exécutable, il n'est pas soumis à script-src.
+# form-action 'self' suffit : le formulaire Netlify poste sur sa propre URL.
 # ---------------------------------------------------------------------------
 [[headers]]
   for = "/*"
@@ -62,3 +67,5 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    Permissions-Policy = "accelerometer=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
