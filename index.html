@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clémentine Delalande Chapron - Correctrice indépendante</title>
 <meta name="description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
+<!-- URL sans www : www.delalandechapron.fr redirige en 301 vers le domaine nu,
+     le canonique doit donc pointer sur la destination, pas sur la redirection. -->
+<link rel="canonical" href="https://delalandechapron.fr/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://delalandechapron.fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clémentine Delalande Chapron">
+<meta property="og:title" content="Clémentine Delalande Chapron - Correctrice indépendante">
+<meta property="og:description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
+<!-- Carte « summary » et non « summary_large_image » : il n'y a pas encore
+     d'og:image (il faudrait un visuel dédié en 1200x630). -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Clémentine Delalande Chapron - Correctrice indépendante">
+<meta name="twitter:description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
 <link rel="shortcut icon" href="/favicons/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
@@ -15,7 +31,11 @@
   @font-face{font-family:'Raleway';font-style:normal;font-weight:300 700;font-display:swap;src:url(./fonts/raleway-latin.woff2) format('woff2')}
 
   :root{
-    --rose:#ff8f98;
+    --rose:#ff8f98;          /* rose de marque : usage décoratif uniquement */
+    /* Rose assombri pour le TEXTE et le bouton. #ff8f98 ne donne que 2,0 à 2,2:1
+       sur nos fonds, loin des 4,5:1 exigés par WCAG AA. Teinte conservée,
+       saturation réduite -> 5,01:1 sur blanc, 4,58:1 sur le fond teinté. */
+    --rose-texte:#c73d48;
     --noir:#000;
     --tint:rgba(237,230,230,.43);
     --serif:'Rozha One',serif;
@@ -30,7 +50,7 @@
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   }
   img{max-width:100%;display:block;}
-  a{color:var(--rose);}
+  a{color:var(--rose-texte);}
 
   /* Mot mis en valeur au fil du texte : Rozha One 16px.
      line-height forcé à 21px pour ne pas gonfler la ligne du paragraphe. */
@@ -45,7 +65,7 @@
   /* Sous-titre rose */
   .subtitle{
     font-family:var(--serif);font-weight:400;font-size:20px;line-height:24px;
-    color:var(--rose);margin:0 0 28px;
+    color:var(--rose-texte);margin:0 0 28px;
   }
   .section--tint{background:var(--tint);}
 
@@ -66,7 +86,7 @@
     display:flex;align-items:center;justify-content:space-between;gap:32px;}
   .about__text{flex:0 1 448px;}
   .about__title{margin:0 0 32px;
-    font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.3;color:var(--rose);}
+    font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.3;color:var(--rose-texte);}
   .about__text p{margin:0 0 24px;}
   .about__text p:last-child{margin-bottom:0;}
   /* Le lien « ici » est noir ET souligné sur le site de référence. Là-bas il est
@@ -95,7 +115,7 @@
   .services__arrow--r{width:129px;height:64px;margin-top:5px;}
   .services__cols{display:flex;gap:26px;max-width:1021px;margin:19px auto 0;align-items:stretch;}
   .services__col{flex:1 1 0;display:flex;flex-direction:column;text-align:center;}
-  .services__col h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;color:var(--rose);margin:0 0 44px;text-align:center;}
+  .services__col h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;color:var(--rose-texte);margin:0 0 44px;text-align:center;}
   .services__col p{margin:0 0 19px;}
   /* margin-top:auto pousse chaque image en bas de sa colonne -> bas alignés */
   .services__col img{width:100%;height:auto;border-radius:2px;margin-top:auto;}
@@ -139,7 +159,7 @@
   .contact__form ::placeholder{color:#888;opacity:1;}
   .contact__form button{
     display:block;width:132px;height:49px;margin:0 auto;padding:0;
-    border:0;border-radius:3px;background:var(--rose);
+    border:0;border-radius:3px;background:var(--rose-texte);
     font-family:var(--sans);font-size:14px;color:#fff;cursor:pointer;}
   .contact__form button:hover{opacity:.9;}
 
@@ -150,7 +170,7 @@
   .insta__grid a{flex:0 0 auto;width:148px;height:148px;overflow:hidden;border-radius:2px;}
   .insta__grid img{width:100%;height:100%;object-fit:cover;}
   .insta__caption{max-width:674px;margin:5px auto 0;text-align:center;
-    font-family:var(--serif);font-weight:400;font-size:18px;line-height:23.4px;color:var(--rose);}
+    font-family:var(--serif);font-weight:400;font-size:18px;line-height:23.4px;color:var(--rose-texte);}
   .insta__caption a{color:inherit;text-decoration:none;}
   .insta__caption a:hover{text-decoration:underline;}
 
@@ -265,6 +285,40 @@
     .insta__grid a{width:130px;height:130px;}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Clémentine Delalande Chapron",
+  "jobTitle": "Correctrice indépendante",
+  "description": "Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.",
+  "url": "https://delalandechapron.fr",
+  "email": "chapron.clementine@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Bretagne",
+    "addressCountry": "FR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Service Client",
+    "email": "chapron.clementine@gmail.com",
+    "availableLanguage": "French"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/cl%C3%A9mentine-delalande-chapron-a98442133",
+    "https://www.instagram.com/clementine.correctrice/"
+  ],
+  "knowsAbout": ["Correction de textes", "Relecture", "Orthographe", "Grammaire", "Édition"],
+  "offers": {
+    "@type": "Service",
+    "name": "Services de correction et relecture",
+    "description": "Relecture-correction et préparation de copie pour tous types de textes",
+    "provider": { "@type": "Person", "name": "Clémentine Delalande Chapron" }
+  },
+  "inLanguage": "fr"
+}
+</script>
 </head>
 <body>
 
