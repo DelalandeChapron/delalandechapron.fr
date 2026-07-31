@@ -55,11 +55,6 @@
   dt{font-weight:600;margin-top:12px;}
   dd{margin:0 0 0 0;}
   .retour{display:inline-block;margin-bottom:40px;font-size:14px;}
-  /* Encadré des informations manquantes : volontairement très visible pour qu'il
-     soit impossible de publier la page en l'oubliant. */
-  .a-completer{background:#fff3cd;border-left:4px solid #b8860b;padding:12px 16px;
-     margin:0 0 16px;font-size:14px;}
-  .a-completer code{background:#00000010;padding:1px 5px;border-radius:2px;}
 
   footer{background:var(--tint);border-top:1px solid #e4dcdc;
      padding:28px 24px;text-align:center;font-size:13px;}
@@ -82,22 +77,31 @@
 
   <h2>Éditeur du site</h2>
   <dl>
-    <dt>Responsable de la publication</dt>
-    <dd>Clémentine Delalande Chapron</dd>
-    <dt>Statut</dt>
-    <dd>Entreprise individuelle (EI)</dd>
+    <dt>Éditrice et responsable de la publication</dt>
+    <dd>Clémentine Delalande Chapron, entrepreneur individuel (EI)</dd>
     <dt>SIRET</dt>
     <dd>909 545 576 00029</dd>
-    <dt>Adresse e-mail</dt>
+    <dt>TVA</dt>
+    <dd>Non applicable, article 293 B du code général des impôts</dd>
+    <dt>Contact</dt>
     <dd><a href="mailto:chapron.clementine@gmail.com">chapron.clementine@gmail.com</a></dd>
   </dl>
-  <p class="a-completer">
-    <strong>À compléter avant publication.</strong> L’article 6-III de la loi
-    pour la confiance dans l’économie numérique impose, pour un site édité à
-    titre professionnel par une personne physique, d’indiquer également
-    <code>l’adresse</code> et un <code>numéro de téléphone</code>. Ces deux
-    informations manquent ci-dessus.
-  </p>
+  <!-- ===================================================================
+       À COMPLÉTER : adresse professionnelle et numéro de téléphone.
+
+       L'article 6-III de la LCEN les exige tous deux pour un site édité à
+       titre professionnel par une personne physique. Ils sont volontairement
+       absents pour ne pas publier le domicile ni le numéro personnel de
+       Clémentine, qui travaille de chez elle.
+
+       La voie retenue : une domiciliation commerciale (10-40 EUR/mois) fournit
+       une adresse professionnelle publiable ; il faut ensuite déclarer le
+       changement au guichet unique de l'INPI. Pour le téléphone, un numéro
+       professionnel dédié renvoyé vers son mobile (3-15 EUR/mois) évite de
+       diffuser le numéro personnel.
+
+       Suivi : https://github.com/DelalandeChapron/delalandechapron.fr/issues
+       =================================================================== -->
 
   <h2>Hébergement</h2>
   <p>
