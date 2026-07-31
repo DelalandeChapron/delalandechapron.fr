@@ -22,6 +22,10 @@
 # forme sans extension, mais servait aussi la forme en .html en 200 : deux URLs
 # pour un même contenu. On tranche par une redirection permanente vers la forme
 # sans extension, celle que portent les liens et les canoniques.
+# force = true est indispensable : sans lui, Netlify sert d'abord le fichier
+# statique existant et n'applique jamais la redirection (vérifié en preview,
+# les trois règles renvoyaient 200). Aucun risque de boucle, la règle porte sur
+# le chemin demandé : « / » ne correspond pas à « /index.html ».
 # (404.html est volontairement absent de cette liste : Netlify s'en sert comme
 #  page d'erreur, le rediriger la casserait.)
 # ---------------------------------------------------------------------------
@@ -29,16 +33,19 @@
   from = "/index.html"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/mentions-legales.html"
   to = "/mentions-legales"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/merci.html"
   to = "/merci"
   status = 301
+  force = true
 
 # ---------------------------------------------------------------------------
 # En-têtes de cache — repris à l'identique de l'ancien .htaccess Apache
