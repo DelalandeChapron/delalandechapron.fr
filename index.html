@@ -69,9 +69,11 @@
     font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.3;color:var(--rose);}
   .about__text p{margin:0 0 24px;}
   .about__text p:last-child{margin-bottom:0;}
-  /* Le lien « ici » est noir sur le site de référence, pas rose. */
-  .about__text a{color:inherit;text-decoration:none;}
-  .about__text a:hover{text-decoration:underline;}
+  /* Le lien « ici » est noir ET souligné sur le site de référence. Là-bas il est
+     balisé <u><a style="text-decoration:none">ici</a></u> : c'est le <u> qui peint
+     le trait, un descendant ne pouvant pas annuler la décoration d'un ancêtre.
+     C'est le seul texte souligné de toute la page. */
+  .about__text a{color:inherit;text-decoration:underline;}
   .about__img{flex:0 1 549px;width:549px;height:auto;}
 
   /* ========================== QUI SUIS-JE ========================== */
