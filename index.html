@@ -5,17 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clémentine Delalande Chapron - Correctrice indépendante</title>
 <meta name="description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
+<!-- URL sans www : www.delalandechapron.fr redirige en 301 vers le domaine nu,
+     le canonique doit donc pointer sur la destination, pas sur la redirection. -->
+<link rel="canonical" href="https://delalandechapron.fr/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://delalandechapron.fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clémentine Delalande Chapron">
+<meta property="og:title" content="Clémentine Delalande Chapron - Correctrice indépendante">
+<meta property="og:description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
+<meta property="og:image" content="https://delalandechapron.fr/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Clémentine Delalande Chapron, correctrice indépendante : relecture, correction, préparation de copie">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clémentine Delalande Chapron - Correctrice indépendante">
+<meta name="twitter:description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
 <link rel="shortcut icon" href="/favicons/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
 <link rel="preload" as="font" type="font/woff2" href="./fonts/rozha-one-latin.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="./fonts/raleway-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="./fonts/raleway-400.woff2" crossorigin>
 <style>
   @font-face{font-family:'Rozha One';font-style:normal;font-weight:400;font-display:swap;src:url(./fonts/rozha-one-latin.woff2) format('woff2')}
-  @font-face{font-family:'Raleway';font-style:normal;font-weight:300 700;font-display:swap;src:url(./fonts/raleway-latin.woff2) format('woff2')}
+  /* Instance statique 400 au lieu de la police variable 100-900 : cette page
+     n'utilise que la graisse 400, l'axe variable coûtait 25 Ko pour rien. */
+  @font-face{font-family:'Raleway';font-style:normal;font-weight:400;font-display:swap;src:url(./fonts/raleway-400.woff2) format('woff2')}
 
   :root{
-    --rose:#ff8f98;
+    --rose:#ff8f98;          /* rose de marque : usage décoratif uniquement */
+    /* Rose assombri pour le TEXTE et le bouton. #ff8f98 ne donne que 2,0 à 2,2:1
+       sur nos fonds, loin des 4,5:1 exigés par WCAG AA. Teinte conservée,
+       saturation réduite -> 5,01:1 sur blanc, 4,58:1 sur le fond teinté. */
+    --rose-texte:#c73d48;
     --noir:#000;
     --tint:rgba(237,230,230,.43);
     --serif:'Rozha One',serif;
@@ -30,7 +54,7 @@
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   }
   img{max-width:100%;display:block;}
-  a{color:var(--rose);}
+  a{color:var(--rose-texte);}
 
   /* Mot mis en valeur au fil du texte : Rozha One 16px.
      line-height forcé à 21px pour ne pas gonfler la ligne du paragraphe. */
@@ -45,7 +69,7 @@
   /* Sous-titre rose */
   .subtitle{
     font-family:var(--serif);font-weight:400;font-size:20px;line-height:24px;
-    color:var(--rose);margin:0 0 28px;
+    color:var(--rose-texte);margin:0 0 28px;
   }
   .section--tint{background:var(--tint);}
 
@@ -66,7 +90,7 @@
     display:flex;align-items:center;justify-content:space-between;gap:32px;}
   .about__text{flex:0 1 448px;}
   .about__title{margin:0 0 32px;
-    font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.3;color:var(--rose);}
+    font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.3;color:var(--rose-texte);}
   .about__text p{margin:0 0 24px;}
   .about__text p:last-child{margin-bottom:0;}
   /* Le lien « ici » est noir ET souligné sur le site de référence. Là-bas il est
@@ -95,7 +119,7 @@
   .services__arrow--r{width:129px;height:64px;margin-top:5px;}
   .services__cols{display:flex;gap:26px;max-width:1021px;margin:19px auto 0;align-items:stretch;}
   .services__col{flex:1 1 0;display:flex;flex-direction:column;text-align:center;}
-  .services__col h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;color:var(--rose);margin:0 0 44px;text-align:center;}
+  .services__col h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;color:var(--rose-texte);margin:0 0 44px;text-align:center;}
   .services__col p{margin:0 0 19px;}
   /* margin-top:auto pousse chaque image en bas de sa colonne -> bas alignés */
   .services__col img{width:100%;height:auto;border-radius:2px;margin-top:auto;}
@@ -124,7 +148,9 @@
   .contact__intro{margin:0;font-size:16px;line-height:24px;}
   .contact__email{margin:32px 0 0;font-family:var(--serif);font-size:20px;line-height:24px;color:var(--noir);}
   .contact__linkedin{position:relative;height:92px;width:300px;margin:53px auto 0;}
-  .contact__linkedin-icon{position:absolute;top:0;right:0;color:var(--rose);line-height:0;}
+  /* Icône en --rose-texte et non --rose : à 2,18:1 le rose de marque n'atteint
+     pas les 3:1 exigés pour un élément graphique porteur de sens. */
+  .contact__linkedin-icon{position:absolute;top:0;right:0;color:var(--rose-texte);line-height:0;}
   .contact__linkedin-arrow{position:absolute;top:29px;right:44px;width:61px;height:55px;}
   .contact__linkedin-text{position:absolute;top:74px;left:0;
     font-family:var(--serif);font-size:14px;line-height:18.2px;color:var(--noir);text-decoration:none;}
@@ -139,9 +165,11 @@
   .contact__form ::placeholder{color:#888;opacity:1;}
   .contact__form button{
     display:block;width:132px;height:49px;margin:0 auto;padding:0;
-    border:0;border-radius:3px;background:var(--rose);
+    border:0;border-radius:3px;background:var(--rose-texte);
     font-family:var(--sans);font-size:14px;color:#fff;cursor:pointer;}
   .contact__form button:hover{opacity:.9;}
+  /* Information RGPD au point de collecte (article 13 du règlement) */
+  .contact__rgpd{margin:16px 0 0;font-size:12px;line-height:1.5;color:#555;text-align:center;}
 
   /* ======================= BANNIÈRE + INSTAGRAM ======================= */
   .banner{height:554px;background:url(./assets/images/hero-bg.webp) center/cover no-repeat;background-color:#1d1e20;}
@@ -150,9 +178,16 @@
   .insta__grid a{flex:0 0 auto;width:148px;height:148px;overflow:hidden;border-radius:2px;}
   .insta__grid img{width:100%;height:100%;object-fit:cover;}
   .insta__caption{max-width:674px;margin:5px auto 0;text-align:center;
-    font-family:var(--serif);font-weight:400;font-size:18px;line-height:23.4px;color:var(--rose);}
+    font-family:var(--serif);font-weight:400;font-size:18px;line-height:23.4px;color:var(--rose-texte);}
   .insta__caption a{color:inherit;text-decoration:none;}
   .insta__caption a:hover{text-decoration:underline;}
+
+  /* ============================= PIED DE PAGE =============================
+     Absent du site d'origine. Ajouté pour rendre accessibles les mentions
+     légales, obligatoires, depuis n'importe où dans la page. */
+  .pied{background:var(--tint);border-top:1px solid #e4dcdc;
+    padding:28px 24px;text-align:center;font-size:13px;}
+  .pied a{margin:0 10px;}
 
   /* ==================================================================
      ÉCRANS LARGES (≥1180px) — calage pixel sur delalandechapron.fr.
@@ -221,7 +256,11 @@
     .temoignages__col--r{flex:0 0 421px;}
 
     /* ---- ME CONTACTER : section de 749px ---- */
-    .contact{padding:78px 0 173px;}
+    /* Marge basse ramenée de 173 à 106 px : la mention RGPD ajoutée sous le
+       bouton fait grandir le formulaire de 67 px, absorbés ici pour que la
+       section garde sa hauteur de 749 px et que la bannière, la grille
+       Instagram et tout ce qui précède ne bougent pas d'un pixel. */
+    .contact{padding:78px 0 106px;}
     .contact .section-title{margin-bottom:0;}
     .contact__inner{justify-content:flex-start;gap:159px;margin-top:65px;}
     .contact__left{flex:0 0 400px;padding-top:74px;}
@@ -265,8 +304,44 @@
     .insta__grid a{width:130px;height:130px;}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Clémentine Delalande Chapron",
+  "jobTitle": "Correctrice indépendante",
+  "description": "Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.",
+  "url": "https://delalandechapron.fr",
+  "email": "chapron.clementine@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Bretagne",
+    "addressCountry": "FR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Service Client",
+    "email": "chapron.clementine@gmail.com",
+    "availableLanguage": "French"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/cl%C3%A9mentine-delalande-chapron-a98442133",
+    "https://www.instagram.com/clementine.correctrice/"
+  ],
+  "knowsAbout": ["Correction de textes", "Relecture", "Orthographe", "Grammaire", "Édition"],
+  "offers": {
+    "@type": "Service",
+    "name": "Services de correction et relecture",
+    "description": "Relecture-correction et préparation de copie pour tous types de textes",
+    "provider": { "@type": "Person", "name": "Clémentine Delalande Chapron" }
+  },
+  "inLanguage": "fr"
+}
+</script>
 </head>
 <body>
+
+<main>
 
   <!-- ============================ HERO ============================ -->
   <section class="hero">
@@ -276,7 +351,7 @@
       <img class="hero__image" src="./assets/images/hero-portrait.webp"
            srcset="./assets/images/hero-portrait-mobile.webp 257w, ./assets/images/hero-portrait.webp 679w"
            sizes="(min-width:920px) 679px, 257px" width="679" height="706"
-           alt="Clémentine Delalande Chapron, correctrice indépendante professionnelle" loading="eager" fetchpriority="high">
+           alt="Gros plan sur un livre ouvert" loading="eager" fetchpriority="high">
     </div>
   </section>
 
@@ -331,7 +406,7 @@
       <div class="services__col services__col--right">
         <h3>Relecture-correction</h3>
         <p>Je corrige l’orthographe, l’orthotypographie, la grammaire, la syntaxe, la ponctuation, les répétitions, la graphie des noms propres, les incohérences. Si la mise en page du texte a déjà été faite, je la vérifie également.</p>
-        <img src="./assets/images/correction-exemple.webp" width="496" height="292" alt="Relecture-correction sur manuscrit imprimé" loading="lazy">
+        <img src="./assets/images/correction-exemple.webp" width="496" height="292" alt="Lunettes de lecture posées sur un ouvrage" loading="lazy">
       </div>
     </div>
     <div class="services__more">
@@ -403,6 +478,7 @@
         <label for="message">Message*</label>
         <textarea id="message" name="message" required placeholder="Votre message"></textarea>
         <button type="submit">Envoyer</button>
+        <p class="contact__rgpd">Vos informations servent uniquement à vous répondre et à établir un devis&nbsp;; elles ne sont jamais transmises à des fins publicitaires. <a href="/mentions-legales.html#donnees-personnelles">En savoir plus</a>.</p>
       </form>
     </div>
   </section>
@@ -420,6 +496,16 @@
     </div>
     <p class="insta__caption"><a href="https://www.instagram.com/clementine.correctrice/" target="_blank" rel="noopener">N'hésitez pas à me suivre sur Instagram&nbsp;!</a></p>
   </section>
+
+</main>
+
+  <!-- ============================ PIED DE PAGE ============================ -->
+  <footer class="pied">
+    <nav aria-label="Liens légaux">
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/mentions-legales.html#donnees-personnelles">Données personnelles</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
