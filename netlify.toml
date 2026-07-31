@@ -18,6 +18,29 @@
   status = 200
 
 # ---------------------------------------------------------------------------
+# Une seule URL vivante par page. Netlify réécrit les liens du HTML vers la
+# forme sans extension, mais servait aussi la forme en .html en 200 : deux URLs
+# pour un même contenu. On tranche par une redirection permanente vers la forme
+# sans extension, celle que portent les liens et les canoniques.
+# (404.html est volontairement absent de cette liste : Netlify s'en sert comme
+#  page d'erreur, le rediriger la casserait.)
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mentions-legales.html"
+  to = "/mentions-legales"
+  status = 301
+
+[[redirects]]
+  from = "/merci.html"
+  to = "/merci"
+  status = 301
+
+# ---------------------------------------------------------------------------
 # En-têtes de cache — repris à l'identique de l'ancien .htaccess Apache
 # ---------------------------------------------------------------------------
 

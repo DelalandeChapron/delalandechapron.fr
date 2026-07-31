@@ -24,6 +24,7 @@
 <meta name="twitter:title" content="Clémentine Delalande Chapron - Correctrice indépendante">
 <meta name="twitter:description" content="Correctrice indépendante professionnelle, je propose des services de relecture et correction de textes : romans, essais, documents d'entreprise. Devis gratuit et travail rigoureux en Bretagne.">
 <link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
 <link rel="preload" as="font" type="font/woff2" href="./fonts/rozha-one-latin.woff2" crossorigin>
@@ -172,7 +173,14 @@
   .contact__rgpd{margin:16px 0 0;font-size:12px;line-height:1.5;color:#555;text-align:center;}
 
   /* ======================= BANNIÈRE + INSTAGRAM ======================= */
-  .banner{height:554px;background:url(./assets/images/hero-bg.webp) center/cover no-repeat;background-color:#1d1e20;}
+  /* Bannière décorative. L'image existe en quatre largeurs : on sert la plus
+     petite qui convienne au lieu de la 1920 px (86,8 Ko) pour tout le monde.
+     Elle est recadrée en « cover » sur une bande de 240 à 554 px de haut, donc
+     une légère perte de finesse sur écran haute densité ne se voit pas — et
+     cela évite 64 Ko sur mobile. */
+  .banner{height:554px;background:url(./assets/images/hero-bg-768w.webp) center/cover no-repeat;background-color:#1d1e20;}
+  @media (min-width:641px){.banner{background-image:url(./assets/images/hero-bg-1024w.webp);}}
+  @media (min-width:1025px){.banner{background-image:url(./assets/images/hero-bg-1920w.webp);}}
   .insta{padding:48px 16px 40px;}
   .insta__grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:674px;margin:0 auto;}
   .insta__grid a{flex:0 0 auto;width:148px;height:148px;overflow:hidden;border-radius:2px;}
@@ -466,7 +474,7 @@
           <a class="contact__linkedin-text" href="https://www.linkedin.com/in/cl%C3%A9mentine-delalande-chapron-a98442133" target="_blank" rel="noopener">Cliquez pour accéder à mon LinkedIn&nbsp;!</a>
         </div>
       </div>
-      <form class="contact__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="contact__form" name="contact" method="POST" action="/merci" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact">
         <p hidden><label>Ne pas remplir&nbsp;: <input name="bot-field"></label></p>
         <label for="prenom">Prénom</label>
@@ -478,7 +486,7 @@
         <label for="message">Message*</label>
         <textarea id="message" name="message" required placeholder="Votre message"></textarea>
         <button type="submit">Envoyer</button>
-        <p class="contact__rgpd">Vos informations servent uniquement à vous répondre et à établir un devis&nbsp;; elles ne sont jamais transmises à des fins publicitaires. <a href="/mentions-legales.html#donnees-personnelles">En savoir plus</a>.</p>
+        <p class="contact__rgpd">Vos informations servent uniquement à vous répondre et à établir un devis&nbsp;; elles ne sont jamais transmises à des fins publicitaires. <a href="/mentions-legales#donnees-personnelles">En savoir plus</a>.</p>
       </form>
     </div>
   </section>
@@ -502,8 +510,8 @@
   <!-- ============================ PIED DE PAGE ============================ -->
   <footer class="pied">
     <nav aria-label="Liens légaux">
-      <a href="/mentions-legales.html">Mentions légales</a>
-      <a href="/mentions-legales.html#donnees-personnelles">Données personnelles</a>
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/mentions-legales#donnees-personnelles">Données personnelles</a>
     </nav>
   </footer>
 

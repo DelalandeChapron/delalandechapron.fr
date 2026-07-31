@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Message envoyé - Clémentine Delalande Chapron</title>
+<!-- noindex : page de confirmation, elle n'a rien à faire dans un moteur de
+     recherche, et elle est atteignable en 200 à /merci. -->
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+<link rel="preload" as="font" type="font/woff2" href="./fonts/rozha-one-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="./fonts/raleway-400.woff2" crossorigin>
+<style>
+  @font-face{font-family:'Rozha One';font-style:normal;font-weight:400;font-display:swap;src:url(./fonts/rozha-one-latin.woff2) format('woff2')}
+  @font-face{font-family:'Raleway';font-style:normal;font-weight:400;font-display:swap;src:url(./fonts/raleway-400.woff2) format('woff2')}
+
+  /* Jetons repris de index.html, comme pour les autres pages secondaires :
+     dupliqués volontairement pour ne pas imposer une requête bloquante de
+     feuille externe à la page d'accueil, qui est la page critique. */
+  :root{
+    --rose-texte:#c73d48;
+    --noir:#000;
+    --tint:rgba(237,230,230,.43);
+    --serif:'Rozha One',serif;
+    --sans:'Raleway',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;background:#fff;color:var(--noir);
+    font-family:var(--sans);font-size:16px;line-height:1.65;
+    display:flex;flex-direction:column;min-height:100%;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  a{color:var(--rose-texte);}
+  main{flex:1;display:flex;align-items:center;justify-content:center;
+    max-width:620px;margin:0 auto;padding:48px 24px;text-align:center;}
+  h1{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.2;margin:0 0 20px;}
+  p{margin:0 0 20px;}
+  .retour{display:inline-block;margin-top:12px;font-family:var(--serif);font-size:18px;}
+  footer{background:var(--tint);border-top:1px solid #e4dcdc;
+    padding:28px 24px;text-align:center;font-size:13px;}
+  footer a{margin:0 10px;color:var(--rose-texte);}
+  @media (max-width:600px){ h1{font-size:30px;} }
+</style>
+</head>
+<body>
+
+<main>
+  <div>
+    <h1>Merci&nbsp;!</h1>
+    <p>Votre message est bien parti. Je vous répondrai dans les meilleurs délais.</p>
+    <p>Si vous souhaitez ajouter un extrait de votre texte pour que j’établisse un
+      devis, répondez simplement à l’e-mail de confirmation, ou écrivez-moi
+      directement à <a href="mailto:chapron.clementine@gmail.com">chapron.clementine@gmail.com</a>.</p>
+    <a class="retour" href="/">Retour à l’accueil</a>
+  </div>
+</main>
+
+<footer>
+  <nav aria-label="Liens légaux">
+    <a href="/mentions-legales">Mentions légales</a>
+    <a href="/mentions-legales#donnees-personnelles">Données personnelles</a>
+  </nav>
+</footer>
+
+</body>
+</html>
