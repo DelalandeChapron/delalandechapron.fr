@@ -356,9 +356,17 @@
     <div class="hero__inner">
       <h1 class="hero__title">Clémentine Delalande Chapron</h1>
       <p class="hero__subtitle">Un accompagnement rigoureux et bienveillant au service de votre écrit&nbsp;!</p>
+      <!-- Descripteurs w = largeur RÉELLE des fichiers (609 et 375 px), et non la
+           taille d'affichage comme c'était écrit ici (679w et 257w) : le navigateur
+           choisit sa source d'après ces valeurs, il ne faut pas lui mentir.
+           À noter : le fichier fait 609 px alors qu'il est affiché à 679, donc il est
+           étiré — 2,2x sur écran haute densité. C'est hérité de l'ancien site, qui
+           déclarait déjà width="679" sur ce même fichier. Seule la photo d'origine
+           permettra d'y remédier ; le CDN Zyro qui hébergeait une version 1440 px
+           renvoie désormais 404. -->
       <img class="hero__image" src="./assets/images/hero-portrait.webp"
-           srcset="./assets/images/hero-portrait-mobile.webp 257w, ./assets/images/hero-portrait.webp 679w"
-           sizes="(min-width:920px) 679px, 257px" width="679" height="706"
+           srcset="./assets/images/hero-portrait-mobile.webp 375w, ./assets/images/hero-portrait.webp 609w"
+           sizes="(min-width:920px) 679px, 257px" width="609" height="631"
            alt="Gros plan sur un livre ouvert" loading="eager" fetchpriority="high">
     </div>
   </section>
